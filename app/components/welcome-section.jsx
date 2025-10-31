@@ -119,7 +119,7 @@ export function WelcomeSection() {
                             <div className="absolute inset-0 border-2 border-primary rounded-xl transform rotate-6 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-105"></div>
                             <div className="relative w-full h-full overflow-hidden rounded-xl shadow-2xl transition-all duration-700 group-hover:scale-105 group-hover:shadow-primary/30">
                                 <Image
-                                    src="/WhatsApp Image 2025-05-05 at 23.29.03_61e5ea68.jpg"
+                                    src="/WhatsApp Image 2025-07-01 at 16.29.08_c5a71e8c.jpg"
                                     alt="Surya's Profile Picture"
                                     width={400}
                                     height={400}
