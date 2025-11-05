@@ -43,7 +43,7 @@ export function WelcomeSection() {
                                 size="lg"
                                 className="transition-transform duration-300 hover:scale-105 focus:scale-105"
                             >
-                                <Link href="/Surya%20T%20Resume.pdf" target="_blank" rel="noopener noreferrer">
+                                <Link href="/Surya T Resume (1).pdf" target="_blank" rel="noopener noreferrer">
                                     View CV
                                     <Eye className="ml-2 h-5 w-5 animate-bounce" />
                                 </Link>

@@ -3,7 +3,7 @@
 import './globals.css';
 import { ThemeProvider } from '../app/components/theme-provider';
 import { Toaster } from "../app/components/ui/toaster";
-import { Header } from '../app/components/header';
+import  Header  from '../app/components/header';
 import { Footer } from '../app/components/footer';
 import ScrollToTop from '../app/components/scroll-to-top';
 

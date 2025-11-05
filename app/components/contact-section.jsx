@@ -5,17 +5,15 @@ import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 
-// Motion wrappers for input and textarea
 const MotionInput = motion.input;
 const MotionTextarea = motion.textarea;
 
-// Contact Info Card Component
 const ContactInfoCard = ({ icon, title, content, href }) => (
   <motion.a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-card/50 p-5 rounded-xl flex items-center gap-4 hover:bg-card/80 transition-colors duration-300 border border-border"
+    className="bg-card/50 p-5 rounded-xl flex items-center gap-4 hover:bg-card/80 transition-colors duration-300 border border-border w-full"
     whileHover={{
       scale: 1.05,
       y: -5,
@@ -29,20 +27,21 @@ const ContactInfoCard = ({ icon, title, content, href }) => (
     viewport={{ once: true }}
   >
     <motion.div
-      className="bg-primary p-3 rounded-lg text-primary-foreground"
+      className="bg-primary p-3 rounded-lg text-primary-foreground flex-shrink-0"
       whileHover={{ rotate: 360 }}
       transition={{ duration: 0.6 }}
     >
       {icon}
     </motion.div>
-    <div>
+    <div className="flex flex-col overflow-hidden">
       <p className="text-sm text-muted-foreground">{title}</p>
-      <p className="text-base font-semibold text-foreground">{content}</p>
+      <p className="text-base font-semibold text-foreground break-words">
+        {content}
+      </p>
     </div>
   </motion.a>
 );
 
-// Main Contact Section
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -51,7 +50,6 @@ export function ContactSection() {
     place: "",
     message: "",
   });
-
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -71,8 +69,7 @@ export function ContactSection() {
 
     emailjs
       .send(serviceID, templateID, formData, publicKey)
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
+      .then(() => {
         setStatus("Message sent successfully!");
         setFormData({
           name: "",
@@ -82,13 +79,8 @@ export function ContactSection() {
           message: "",
         });
       })
-      .catch((err) => {
-        console.error("FAILED...", err);
-        setStatus("Failed to send message. Please try again.");
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+      .catch(() => setStatus("Failed to send message. Please try again."))
+      .finally(() => setIsSubmitting(false));
   };
 
   const staticPlace = "Tiruppur, Tamil Nadu, India";
@@ -96,15 +88,16 @@ export function ContactSection() {
     "https://www.google.com/maps/search/?api=1&query=Tiruppur+Tamil+Nadu+India";
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-card/10">
+    <section id="contact" className="py-16 md:py-24 bg-card/10">
       <motion.div
-        className="w-full flex items-center justify-center p-4 sm:p-6 lg:p-8"
+        className="w-full flex items-center justify-center px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <div className="max-w-6xl w-full mx-auto">
+          {/* Header */}
           <motion.div
             className="text-left mb-4"
             initial={{ opacity: 0, x: -50 }}
@@ -121,19 +114,20 @@ export function ContactSection() {
           </motion.div>
 
           <motion.div
-            className="text-left mb-12"
+            className="text-left mb-10 md:mb-14"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-chart-4 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-chart-4 bg-clip-text text-transparent leading-tight">
               Let's Discuss Your Project
             </h2>
           </motion.div>
 
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-8">
-            {/* Contact Cards */}
+          {/* Main Content */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10">
+            {/* Contact Info Cards */}
             <motion.div
               className="w-full lg:w-1/3 flex flex-col gap-6"
               initial={{ opacity: 0, x: -50 }}
@@ -142,19 +136,19 @@ export function ContactSection() {
               viewport={{ once: true }}
             >
               <ContactInfoCard
-                icon={<FiPhone size={24} />}
+                icon={<FiPhone size={22} />}
                 title="Call me"
                 content="8124189747"
                 href="tel:+918124189747"
               />
               <ContactInfoCard
-                icon={<FiMail size={24} />}
+                icon={<FiMail size={22} />}
                 title="Email me"
                 content="surya23204@gmail.com"
                 href="mailto:surya23204@gmail.com"
               />
               <ContactInfoCard
-                icon={<FiMapPin size={24} />}
+                icon={<FiMapPin size={22} />}
                 title="Place"
                 content={staticPlace}
                 href={googleMapsUrl}
@@ -169,8 +163,8 @@ export function ContactSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <MotionInput
                     type="text"
                     name="name"
@@ -217,11 +211,11 @@ export function ContactSection() {
                   className="bg-card border border-border p-4 rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary w-full"
                 />
 
-                <div className="text-right">
+                <div className="flex justify-center sm:justify-end">
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-lg hover:bg-primary/90 transition-colors duration-300 disabled:bg-muted disabled:cursor-not-allowed"
+                    className="bg-primary text-primary-foreground font-semibold py-3 px-8 rounded-lg hover:bg-primary/90 transition-colors duration-300 disabled:bg-muted disabled:cursor-not-allowed w-full sm:w-auto"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -231,7 +225,7 @@ export function ContactSection() {
 
                 {status && (
                   <motion.p
-                    className={`mt-4 text-right ${
+                    className={`mt-3 text-center sm:text-right text-sm ${
                       status.includes("successfully")
                         ? "text-green-500"
                         : "text-destructive"

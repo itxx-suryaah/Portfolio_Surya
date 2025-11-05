@@ -33,37 +33,48 @@ const projects = [
     imageUrl: "/moments.jpeg",
     imageHint: "photoshop portfolio",
     tags: ["Web", "React", "Tailwind CSS", "Material UI"],
-    link: "https://moment-by-mithu-varsan.vercel.app/",
+    link: "https://dev.themilkbarrel.com/",
   },
+
   {
     id: 2,
+    title: "Screenshot-DOCX",
+    description: "Screenshot-DOCX is a Next.js-based web application that allows users to capture, edit, and export screenshots directly into a Word-compatible (.docx) format. The project blends features inspired by MS Paint, MS Word, and Canva, providing an all-in-one creative and documentation tool.Users can take or upload screenshots, annotate them with drawing tools, add text or shapes, and instantly export the edited visuals into a structured DOCX file — perfect for creating reports, user guides, or documentation snapshots.",
+    imageUrl: "/Screenshot.png",
+    imageHint: "Screenshot-DOCX",
+    tags: ["Web", "Next.js", "Tailwind CSS", "TypeScript", "React", "Redux", "React Icons", "API Integration", "DOCX Export", "Mixed Mode"],
+    link: "https://www.screendocx.com/",
+  },
+  {
+    id: 3,
+    title: "Job Portal",
+    description: "Avangard Job Portal is a multilingual job search and management platform built with Next.js (TypeScript) and Tailwind CSS. It provides a fully responsive and accessible frontend interface designed for Ukrainian, Polish, and Spanish audiences — intentionally excluding English to focus on targeted regional usability.The platform allows users to browse job listings, apply for positions, and manage recruitment workflows through a clean, modern interface. An integrated admin dashboard enables administrators to create, edit, and manage job postings seamlessly.The project emphasizes frontend architecture, internationalization (i18n), and responsive UI design, demonstrating strong capabilities in creating scalable, multilingual web applications with Next.js.",
+    imageUrl: "/JobPortal.png",
+    imageHint: "Job Portal",
+    tags: ["Web", "typescript", "Tailwind CSS", "Next.js","API integration","i18n","reduce","admin dashboard"],
+    link: "https://avangard.innodirealtors.com/",
+  },
+  {
+    id: 4,
+    title: "Euro-Connect",
+    description: "Euro Connect is a responsive web platform designed for blue-collar workforce networking across Europe, built using Next.js, JavaScript, and Tailwind CSS. As part of the frontend team, I focused on creating a dynamic and user-friendly interface with smooth responsiveness and multilingual support, enabling seamless English–Ukrainian translation. The website delivers a clean, modern design and optimized performance across all devices, ensuring a professional and accessible experience for users.",
+    imageUrl: "/EuroConnect.png",
+    imageHint: "euro connect",
+    tags: ["Web", "React", "Tailwind CSS", "API integration", "Responsive Design", "i8n", "Next.js", "javascript", "redux","next.js" ],
+    link: "https://dev.innodirealtors.com/",
+  },
+
+    {
+    id: 5,
     title: "School Website",
     description: "Built a full-featured school website using React with Tailwind CSS for responsive UI. The project includes a separate admin dashboard and public-facing website, each with dedicated routing and navigation. Integrated RESTful APIs for dynamic data management (e.g., students, teachers, schedules). The frontend is component-based for reusability and scalability. Implemented AI-powered features such as automated suggestions, smart search, or chatbot assistance to enhance user experience. Ensured mobile responsiveness and clean user interface with Tailwind and modern React architecture.",
-    imageUrl: "/image.png",
+    imageUrl: "/School.png",
     imageHint: "school website",
     tags: ["Web", "React", "Tailwind CSS", "Material UI", "Next.js","react-icons","API integration"
       ,"ChatGPT","AI","router"
     ],
     link: "https://school-website-surya.vercel.app/",
   },
-  {
-    id: 3,
-    title: "Screenshot-DOCX",
-    description: "Screenshot-DOCX is a Next.js-based web application that allows users to capture, edit, and export screenshots directly into a Word-compatible (.docx) format. The project blends features inspired by MS Paint, MS Word, and Canva, providing an all-in-one creative and documentation tool.Users can take or upload screenshots, annotate them with drawing tools, add text or shapes, and instantly export the edited visuals into a structured DOCX file — perfect for creating reports, user guides, or documentation snapshots.",
-    imageUrl: "/Screenshot.png",
-    imageHint: "Screenshot-DOCX",
-    tags: ["Web", "Next.js", "Tailwind CSS", "TypeScript", "React", "Redux", "React Icons", "API Integration", "DOCX Export", "Mixed Mode"],
-    link: "https://screenshot-docx-surya.vercel.app/",
-  },
-  {
-    id: 4,
-    title: "Job Portal",
-    description: "Avangard Job Portal is a multilingual job search and management platform built with Next.js (TypeScript) and Tailwind CSS. It provides a fully responsive and accessible frontend interface designed for Ukrainian, Polish, and Spanish audiences — intentionally excluding English to focus on targeted regional usability.The platform allows users to browse job listings, apply for positions, and manage recruitment workflows through a clean, modern interface. An integrated admin dashboard enables administrators to create, edit, and manage job postings seamlessly.The project emphasizes frontend architecture, internationalization (i18n), and responsive UI design, demonstrating strong capabilities in creating scalable, multilingual web applications with Next.js.",
-    imageUrl: "/JobPortal.png",
-    imageHint: "Job Portal",
-    tags: ["Web", "typescript", "Tailwind CSS", "Next.js","API integration","i18n","reduce","admin dashboard"],
-    link: "https://job-portal-surya.vercel.app/",
-  }
 
 ];
 
