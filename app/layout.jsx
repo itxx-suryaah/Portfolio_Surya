@@ -2,10 +2,12 @@
 
 import './globals.css';
 import { ThemeProvider } from '../app/components/theme-provider';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "../app/components/ui/toaster";
 import  Header  from '../app/components/header';
 import { Footer } from '../app/components/footer';
 import ScrollToTop from '../app/components/scroll-to-top';
+
 
 export default function RootLayout({ children }) {
   return (
@@ -33,6 +35,7 @@ export default function RootLayout({ children }) {
               <ScrollToTop />
             </div>
           <Toaster />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

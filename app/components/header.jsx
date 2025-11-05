@@ -346,14 +346,13 @@ export default function Header() {
             }
             className="relative flex items-center w-14 h-7 bg-muted rounded-full cursor-pointer transition-all duration-300 border border-border"
           >
-            <div
-              className={cn(
-                "absolute top-[2px] left-[2px] w-6 h-6 rounded-full flex items-center justify-center bg-primary text-background shadow-sm transition-all duration-300",
-                theme === "dark" && "translate-x-7"
-              )}
-            >
-              <Sun className="w-4 h-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute w-4 h-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                        <div
+                          className={cn(
+                            "absolute top-[2px] left-[2px] w-6 h-6 rounded-full flex items-center justify-center bg-primary text-background shadow-sm transition-all duration-300 translate-x-0 dark:translate-x-7"
+                          )}
+                        >
+              <Sun className="w-4 h-4 rotate-0 scale-100 transition-transform duration-300 dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute w-4 h-4 rotate-90 scale-0 transition-transform duration-300 dark:rotate-0 dark:scale-100" />
             </div>
           </div>
         </div>

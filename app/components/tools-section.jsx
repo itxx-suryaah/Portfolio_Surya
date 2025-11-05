@@ -152,7 +152,7 @@ import {
   SiMongodb,
   SiMysql,
 } from "react-icons/si";
-import { useTheme } from "next-themes";
+// NOTE: removed `useTheme` usage to avoid SSR/CSR mismatches; styling uses Tailwind `dark:` classes
 
 const toolsData = [
   {
@@ -190,14 +190,10 @@ const toolsData = [
 ];
 
 export function ToolsSection() {
-  const { theme } = useTheme();
-
   return (
     <section
       id="tools"
-      className={`relative overflow-hidden py-24 md:py-36 transition-all duration-500 ${
-        theme === "dark" ? "bg-gray-900" : "bg-gray-50"
-      }`}
+      className="relative overflow-hidden py-24 md:py-36 transition-all duration-500  dark:bg-slate-900"
     >
       {/* Animated Background Lights */}
       <div className="absolute inset-0 overflow-hidden">
@@ -225,10 +221,7 @@ export function ToolsSection() {
           <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             My Toolbox
           </h2>
-          <p
-            className={`mt-4 text-lg max-w-2xl mx-auto ${
-              theme === "dark" ? "text-gray-400" : "text-gray-700"
-            }`}
+          <p className="mt-4 text-lg max-w-2xl mx-auto text-gray-700 dark:text-gray-400"
           >
             Technologies that power my projects — from front to back, crafted for performance and style.
           </p>
@@ -245,11 +238,7 @@ export function ToolsSection() {
               className={`relative p-[2px] rounded-2xl bg-gradient-to-r ${category.color} shadow-2xl`}
             >
               <div
-                className={`rounded-2xl backdrop-blur-xl p-6 h-full ${
-                  theme === "dark"
-                    ? "bg-gray-900/60 text-gray-100"
-                    : "bg-white/70 text-gray-800"
-                }`}
+                className="rounded-2xl backdrop-blur-xl p-6 h-full bg-white/70 dark:bg-gray-900/60 text-gray-800 dark:text-gray-100"
               >
                 {/* Category Header */}
                 <h3 className="text-2xl font-semibold mb-6 flex items-center justify-center">
@@ -273,23 +262,14 @@ export function ToolsSection() {
                       whileHover={{
                         scale: 1.08,
                         rotate: 1,
-                        boxShadow:
-                          theme === "dark"
-                            ? "0 0 25px rgba(56,189,248,0.25)"
-                            : "0 0 25px rgba(59,130,246,0.25)",
+                        boxShadow: "0 0 25px rgba(59,130,246,0.25)",
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className={`flex flex-col items-center justify-center gap-3 py-4 rounded-xl border ${
-                        theme === "dark"
-                          ? "border-gray-800 bg-gray-800/60 hover:border-sky-400/60"
-                          : "border-gray-200 bg-gray-50 hover:border-blue-400/60"
-                      }`}
+                      className="flex flex-col items-center justify-center gap-3 py-4 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/60 hover:border-blue-400/60 dark:hover:border-sky-400/60"
                     >
                       <div className="text-3xl">{tool.icon}</div>
                       <p
-                        className={`text-sm font-medium ${
-                          theme === "dark" ? "text-gray-300" : "text-gray-700"
-                        }`}
+                        className="text-sm font-medium text-gray-700 dark:text-gray-300"
                       >
                         {tool.name}
                       </p>
